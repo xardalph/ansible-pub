@@ -1,0 +1,15 @@
+# définition des clients ansible
+# l'intégralité des clients :
+ansible-client
+
+
+
+
+
+
+# les groupes :
+[centos]
+ansible-client
+
+[srv-web]
+ansible-client

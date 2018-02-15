@@ -1,0 +1,28 @@
+---
+- hosts : all
+  
+  tasks:
+  - name : 1. installation des paquets de conforts
+    yum: 
+      name: "{{item}}"  
+      state: latest
+    with_items:
+      - curl
+      - nano
+      - tar 
+      - unzip
+      - tcpdump
+      - wget
+      - elinks
+      - whois
+      - nmap
+      - tree
+
+  - name : 2. ajout du fichier de conf d'alias
+    copy:
+      src: ./alias.sh
+      dest: /etc/profile.d/alias.sh
+      owner: root
+      group: root
+      mode: 0644
+
