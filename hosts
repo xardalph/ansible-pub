@@ -1,7 +1,8 @@
 # définition des clients ansible
 # l'intégralité des clients :
 ansible-client
-
+web1
+web2
 
 
 
@@ -11,5 +12,9 @@ ansible-client
 [centos]
 ansible-client
 
-[srv-web]
+[test]
 ansible-client
+
+[srv-web]
+web1
+web2

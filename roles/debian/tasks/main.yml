@@ -1,0 +1,20 @@
+---
+
+
+- name: 1. maj des machine debian
+  apt:
+    update_cache=yes
+    state=latest
+    name= "{{item}}"
+  with_items:
+  - curl
+  - tar
+  - unzip 
+  - wget
+  - unzip
+  - nano
+  - tcpdump
+  - elinks
+  - whois
+  - nmap
+  - tree
