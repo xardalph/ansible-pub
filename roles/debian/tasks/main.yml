@@ -3,9 +3,14 @@
 
 - name: 1. maj des machine debian
   apt:
+    upgrade: yes
+    update_cache: yes
+
+- name: 2. ajout des paquet les plus utiles
+  apt:
     update_cache=yes
     state=latest
-    name= "{{item}}"
+    name={{item}}
   with_items:
   - curl
   - tar
@@ -18,3 +23,12 @@
   - whois
   - nmap
   - tree
+
+- name: 3. ajout des alias (fichier par famille)
+  copy:
+    src: bash.bashrc
+    dest: /etc/bash.bashrc
+    owner: root
+    group: root
+    mode: 0644
+

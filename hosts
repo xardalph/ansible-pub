@@ -12,6 +12,10 @@ web2
 [centos]
 ansible-client
 
+[debian]
+web1
+web2
+
 [test]
 ansible-client
 
