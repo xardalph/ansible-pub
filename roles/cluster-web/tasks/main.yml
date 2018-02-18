@@ -1,0 +1,4 @@
+- name: 1. installation de pacemaker
+  apt:
+  name: pacemaker 
+ 

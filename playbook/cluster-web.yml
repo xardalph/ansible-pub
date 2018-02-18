@@ -1,0 +1,4 @@
+---
+- hosts: srv-web
+  roles:
+    - cluster-web

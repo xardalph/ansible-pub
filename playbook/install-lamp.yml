@@ -1,8 +1,6 @@
 ---
-- hosts : all
+- hosts : centos
   remote_user: root  
   roles:
     - srv-web
     - centos
-#deux commentaire
-#trois
