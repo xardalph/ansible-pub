@@ -1,9 +1,12 @@
 - name: 1. installation de pacemaker
   apt:
-    update_cache: yes
-    state: present
-    name: pacemaker 
- 
+    update_cache=yes
+    state=present
+    name={{item}} 
+  with_items:
+    - pacemaker 
+    - crmsh
+
 - name: 2. ajout du fichier binaire authkey
   copy:
     src: authkey
@@ -28,10 +31,12 @@
     group: root
     mode: 0644
 
-- name: 5. démarrer le service corosync
+- name: 5. redémare les services corosync et pacemaker
   service:
-    name: corosync
-    state: started
-    enabled: yes
-
+    name={{item}}
+    state=started
+    enabled=yes
+  with_items:
+    - pacemaker
+    - corosync
  
