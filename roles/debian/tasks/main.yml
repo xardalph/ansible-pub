@@ -1,12 +1,5 @@
 ---
-
-
-- name: 1. maj des machine debian
-  apt:
-    upgrade: yes
-    update_cache: yes
-
-- name: 2. ajout des paquet les plus utiles
+- name: 1. ajout des paquets les plus utiles
   apt:
     update_cache=yes
     state=latest
@@ -24,7 +17,7 @@
   - nmap
   - tree
 
-- name: 3. ajout des alias (fichier par famille)
+- name: 2. ajout des alias 
   copy:
     src: bash.bashrc
     dest: /etc/bash.bashrc
