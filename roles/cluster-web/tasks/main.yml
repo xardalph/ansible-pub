@@ -1,4 +1,37 @@
 - name: 1. installation de pacemaker
   apt:
-  name: pacemaker 
+    update_cache: yes
+    state: present
+    name: pacemaker 
+ 
+- name: 2. ajout du fichier binaire authkey
+  copy:
+    src: authkey
+    dest: /etc/corosync/authkey
+    owner: root
+    group: root
+    mode: 0400
+
+- name: 3. ajout du fichier de conf corosync.conf
+  copy:
+    src: corosync.conf
+    dest: /etc/corosync/corosync.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: 4. ajout du fichier de conf corosync
+  copy:
+    src: corosync
+    dest: /etc/default/corosync
+    owner: root
+    group: root
+    mode: 0644
+
+- name: 5. démarrer le service corosync
+  service:
+    name: corosync
+    state: started
+    enabled: yes
+
  
