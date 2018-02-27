@@ -1,5 +1,5 @@
 ---
-- hosts : all
+- hosts : 172.16.0.4
   
   tasks:
   - name : 1. installation des paquets de conforts
@@ -20,9 +20,19 @@
 
   - name : 2. ajout du fichier de conf d'alias
     copy:
-      src: ./alias.sh
+      src: ../file/alias.sh
       dest: /etc/profile.d/alias.sh
       owner: root
       group: root
       mode: 0644
 
+  - name : 3. ajout du dossier .ssh
+    file: path=/home/evan/.ssh state=directory
+
+  - name : 3. ajout de la clé publique pour l'utilisateur evan
+    copy:
+      src: ../file/authorized_keys
+      dest: /home/evan/.ssh/authorized_keys
+      owner: evan
+      group: evan
+      mode: 0644

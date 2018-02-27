@@ -1,5 +1,5 @@
 ---
-- hosts: web2
+- hosts: srv-web
   remote_user: root
   roles:
     - cluster-web
