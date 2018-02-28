@@ -1,10 +1,9 @@
-- tasks: install shinken package
+- name: install shinken package
   yum:
     name: shinken
     state: present
 
-- tasks: 
-  - name: chown var/*/shinken
+- name:  chown var/*/shinken
   file:
     path: /var/{{item}}/shinken
     owner: shinken
@@ -14,3 +13,18 @@
     - var
     - log
     - run
+
+- name: activation des services
+  systemd:
+    state: started
+    enabled: yes
+    name: "{{item}}"
+  
+  with_items:
+    - shinken
+    - shinken-arbiter
+    - shinken-borker
+    - shinken-poller
+    - shinken-reactionner
+    - shinken-receiver
+    - shinken-scheduler

@@ -1,22 +1,22 @@
 # sous-role  pour installer les dépendance de shinken
 
-- task : 1. groupe
+- name : 1. groupe shinken
   group:
     name: shinken
     state: present
 
-- task : 2. utilisateur
+- name : 2. utilisateur shinken
   user:
     name: shinken
     group: shinken
     state: present
 
-- task : 3. installation epel
+- name : 3. installation epel
   yum:
     name: epel-release
     state: present
 
-- task : 4. installation des dépendances
+- name : 4. installation des dépendances
   yum:
     name={{item}}
     state=present
