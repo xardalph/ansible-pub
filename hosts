@@ -1,17 +1,13 @@
-# définition des clients ansible
+# définition des clients debian
 # l'intégralité des clients :
 ansible-client
 web1
 web2
-172.16.0.4
 
 
 
 
 # les groupes :
-[centos]
-ansible-client
-
 [debian]
 web1
 web2

@@ -1,0 +1,6 @@
+---
+- hosts: shinken
+  remote_user: root
+
+  roles: 
+    - shinken

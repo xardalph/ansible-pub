@@ -1,0 +1,16 @@
+- tasks: install shinken package
+  yum:
+    name: shinken
+    state: present
+
+- tasks: 
+  - name: chown var/*/shinken
+  file:
+    path: /var/{{item}}/shinken
+    owner: shinken
+    group: shinken
+    recurse: yes
+  with_items:
+    - var
+    - log
+    - run

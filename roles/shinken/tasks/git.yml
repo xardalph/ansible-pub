@@ -1,0 +1,22 @@
+- tasks: 1. installation pyro
+  easy_install:
+    name: pyro
+    state: present
+
+- tasks: 2. clonnage repo
+  git:
+    repo: https://github.com/naparuba/shinken.git
+    dest: /home/shinken/shinken    
+    clone: yes
+
+- tasks: 3. chown
+  file:
+    path: /home/shinken/shinken/
+    owner: shinken
+    group: shinken
+    recurse: yes
+
+- tasks: 4. install du setup en python
+  shell: python setup.py install
+  args:
+    chdir: /home/shinken/shinken

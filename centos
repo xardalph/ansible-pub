@@ -1,0 +1,13 @@
+# fichier contenant les centos
+
+# liste totale
+shinken
+
+
+
+# les groupes
+[shinken]
+shinken
+
+[centos]
+shinken

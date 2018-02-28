@@ -1,5 +1,5 @@
 ---
-- hosts : 172.16.0.4
+- hosts : centos
   
   tasks:
   - name : 1. installation des paquets de conforts

@@ -1,0 +1,12 @@
+# fichier incluant toutes les taches a effectuer pour installer shinken
+
+# ajoute les paquet avec yum et l'utilisateur 
+- import_tasks: ./prerequis.yml
+
+# ajoute la dépendance pyro a python et clone le repo github
+- import_tasks: ./git.yml
+
+
+# telecharge le paquet shinken et modifie les droits des fichier les plus utile
+- import_tasks: ./yum.yml
+

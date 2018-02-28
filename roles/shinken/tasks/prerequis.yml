@@ -1,0 +1,31 @@
+# sous-role  pour installer les dépendance de shinken
+
+- task : 1. groupe
+  group:
+    name: shinken
+    state: present
+
+- task : 2. utilisateur
+  user:
+    name: shinken
+    group: shinken
+    state: present
+
+- task : 3. installation epel
+  yum:
+    name: epel-release
+    state: present
+
+- task : 4. installation des dépendances
+  yum:
+    name={{item}}
+    state=present
+  with_items:
+    - python-pycurl
+    - python-setuptools
+    - python-pymongo
+    - mongodb
+    - git
+
+
+

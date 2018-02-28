@@ -1,0 +1,10 @@
+---
+- hosts: srv-web
+  remote_user: root
+
+  tasks:
+  - name: installation apache
+    apt:
+      update_cache=yes
+      name=apache2
+      state=present
