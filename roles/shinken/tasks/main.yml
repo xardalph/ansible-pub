@@ -10,3 +10,7 @@
 # telecharge le paquet shinken et modifie les droits des fichier les plus utile
 - import_tasks: ./yum.yml
 
+# initialise shinken
+#installe l'interface graphique
+# l'ajoute a la configuration (avec une expressions réguliere!) 
+- import_tasks: ./web-and-conf.yml

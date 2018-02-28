@@ -6,8 +6,5 @@ shinken
 
 
 # les groupes
-[shinken]
-shinken
-
 [centos]
 shinken

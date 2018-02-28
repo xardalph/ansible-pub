@@ -17,6 +17,8 @@
       - whois
       - nmap
       - tree
+   #   - netstat
+
 
   - name : 2. ajout du fichier de conf d'alias
     copy:

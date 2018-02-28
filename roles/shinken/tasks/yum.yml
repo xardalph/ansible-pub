@@ -19,12 +19,18 @@
     state: started
     enabled: yes
     name: "{{item}}"
-  
   with_items:
     - shinken
     - shinken-arbiter
-    - shinken-borker
+#    - shinken-borker
     - shinken-poller
     - shinken-reactionner
     - shinken-receiver
     - shinken-scheduler
+
+- name: initialisation de shinken
+  become: true
+  become_user: shinken
+  command: shinken --init
+  args:
+    creates: /home/shinken/.shinken.ini
