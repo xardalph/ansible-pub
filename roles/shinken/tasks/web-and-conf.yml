@@ -1,0 +1,37 @@
+- name: Install Shinken WebUI 2
+  become: true
+  become_user: shinken
+  command: shinken install webui2
+  args:
+    creates: /etc/shinken/modules/webui2.cfg
+
+- name: Change broker-master configuration
+  lineinfile:
+    dest=/etc/shinken/brokers/broker-master.cfg
+    state=present
+    regexp='.*[^#] modules*'
+    line="    modules webui2"
+
+- name: installation auth-cfg-password
+  become: true
+  become_user: shinken
+  command: shinken install webui2
+  args:
+    creates: /etc/shinken/modules/webui2.cfg 
+
+- name: installation des dépendances de webui2
+  easy_install:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - bottle
+    - pymongo
+    - requests
+    - arrow
+    - passlib
+
+- name: redémarrage de shinken
+  systemd:
+    name: shinken
+    status: restart
+    enabled: yes
