@@ -33,5 +33,13 @@
 - name: redémarrage de shinken
   systemd:
     name: shinken
-    status: restart
-    enabled: yes
+    state: restarted
+    daemon_reload: yes
+
+- name: ouverture du port dans firewwall-cmd
+  firewalld:
+    permanent: true
+    immediate: yes
+    state: enabled
+    port: 7767-7769/tcp
+
