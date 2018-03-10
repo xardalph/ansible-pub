@@ -1,0 +1,6 @@
+---
+- hosts: test2-shinken
+  remote_user: root
+
+  tasks:
+    - name: 
