@@ -1,5 +1,5 @@
 ---
-- hosts: test-shinken
+- hosts: shinken
   remote_user: root
 
   roles: 
