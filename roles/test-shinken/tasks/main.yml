@@ -44,3 +44,6 @@
         name: shinken
         state: started
         enabled: True
+
+    - name : 7. installation de la webui
+      command: shinken install webui2
