@@ -69,3 +69,10 @@
         name: shinken
         state: restarted
 
+    - name: ouverture du port dans firewwall-cmd
+      firewalld:
+        permanent: true
+        immediate: yes
+        state: enabled
+        port: 7767/tcp
+
