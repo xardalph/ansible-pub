@@ -58,4 +58,8 @@
         regexp='.*[^#] modules*'
         line="    modules webui2,simple-log"
 
+    - name: restart shinken
+      systemd:
+        name: shinken
+        state: restarted
 
