@@ -62,7 +62,7 @@
         dest=/etc/shinken/brokers/broker-master.cfg
         state=present
         regexp='.*[^#] modules*'
-        line="    modules webui2,simple-log"
+        line="    modules webui2"
 
     - name: restart shinken
       systemd:
