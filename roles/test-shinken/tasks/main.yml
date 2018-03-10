@@ -54,22 +54,29 @@
         - shinken
         - mongod
 
+    - name: initialisation de shinken
+      become: true
+      become_user: shinken
+      command: shinken --init
+      args:
+        creates: /home/shinken/.shinken.ini
+
     - name : 7. installation de la webui
       command: shinken install webui2
 
-    - name: Change broker-master configuration
+    - name: 8. Change broker-master configuration
       lineinfile:
         dest=/etc/shinken/brokers/broker-master.cfg
         state=present
         regexp='.*[^#] modules*'
         line="    modules webui2"
 
-    - name: restart shinken
+    - name: 9. restart shinken
       systemd:
         name: shinken
         state: restarted
 
-    - name: ouverture du port dans firewwall-cmd
+    - name: 10. ouverture du port dans firewwall-cmd
       firewalld:
         permanent: true
         immediate: yes
