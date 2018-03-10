@@ -21,11 +21,12 @@
 
     - name : 4. installation pip et lsb
       yum:
-        name={{item}}
+        name: "{{item}}"
         state=present
       with_items:
         - redhat-lsb
         - python-pip
+
     - name : 5. pip install de shinken
       pip:
         name: shinken
