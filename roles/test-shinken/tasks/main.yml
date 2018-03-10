@@ -51,11 +51,11 @@
     - name : 7. installation de la webui
       command: shinken install webui2
 
-- name: Change broker-master configuration
-  lineinfile:
-    dest=/etc/shinken/brokers/broker-master.cfg
-    state=present
-    regexp='.*[^#] modules*'
-    line="    modules webui2,simple-log"
+    - name: Change broker-master configuration
+      lineinfile:
+        dest=/etc/shinken/brokers/broker-master.cfg
+        state=present
+        regexp='.*[^#] modules*'
+        line="    modules webui2,simple-log"
 
 
