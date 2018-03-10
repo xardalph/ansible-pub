@@ -22,7 +22,7 @@
   with_items:
     - shinken
     - shinken-arbiter
-#    - shinken-borker
+    - shinken-broker
     - shinken-poller
     - shinken-reactionner
     - shinken-receiver

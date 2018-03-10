@@ -1,5 +1,5 @@
 ---
-- hosts : centos
+- hosts : test2-shinken
   
   tasks:
   - name : 1. installation des paquets de conforts
@@ -17,7 +17,7 @@
       - whois
       - nmap
       - tree
-   #   - netstat
+      - net-tools
 
 
   - name : 2. ajout du fichier de conf d'alias

@@ -2,9 +2,12 @@
 
 # liste totale
 shinken
-
-
+test-shinken
+test2-shinken
 
 # les groupes
 [centos]
 shinken
+test-shinken
+test2-shinken
+
