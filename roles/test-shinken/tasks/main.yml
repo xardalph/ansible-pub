@@ -26,9 +26,16 @@
       with_items:
         - redhat-lsb
         - python-pip
+        - nagios-plugins
+        - python-crypto
+        - mongodb
+        - mongodb-server
+        - httpd-tools
 
-    - name : 5. pip install de shinken
+    - name : 5. pip install
       pip:
-        name: shinken
+        name: "{{item}}"
         state: present
-
+      with_items:
+        - cherrypy
+        - shinken
