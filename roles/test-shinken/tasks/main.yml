@@ -19,7 +19,7 @@
         name=epel-release
         state=present
 
-    - name : 4. installation pip et lsb
+    - name : 4. installation prérequis (pip et lsb entre autres)
       yum:
         name: "{{item}}"
         state: present
