@@ -3,4 +3,18 @@
   remote_user: root
 
   tasks:
-    - name: 
+    - name : 1. groupe shinken
+      group:
+        name: shinken
+        state: present
+
+    - name : 2. utilisateur shinken
+      user:
+        name: shinken
+        group: shinken
+        state: present
+    
+    - name : 3. installation epel
+      yum:
+        name: epel-release
+        state: present
