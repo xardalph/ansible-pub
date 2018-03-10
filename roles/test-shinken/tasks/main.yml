@@ -39,3 +39,8 @@
       with_items:
         - cherrypy
         - shinken
+    - name : 6. enable des services
+      systemd:
+        name: shinken
+        state: started
+        enabled: True
