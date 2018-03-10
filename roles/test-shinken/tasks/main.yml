@@ -44,7 +44,7 @@
         name: "{{item}}"
         state: started
         enabled: True
-      with-items:
+      with_items:
         - shinken
         - mongod
 
