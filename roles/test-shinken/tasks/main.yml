@@ -14,12 +14,12 @@
         group: shinken
         state: present
 
-    - name : 3. installation epel, pip et lsb
+    - name : 3. installation epel
       yum:
         name=epel-release
         state=present
 
-    - name : 4. installation epel, pip et lsb
+    - name : 4. installation pip et lsb
       yum:
         name="{{item}}"
         state=present
