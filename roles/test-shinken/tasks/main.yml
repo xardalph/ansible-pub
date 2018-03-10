@@ -41,9 +41,12 @@
         - shinken
     - name : 6. enable des services
       systemd:
-        name: shinken
+        name: "{{item}}"
         state: started
         enabled: True
+      with-items:
+        - shinken
+        - mongod
 
     - name : 7. installation de la webui
       command: shinken install webui2
